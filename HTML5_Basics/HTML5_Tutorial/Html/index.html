@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="/html/css/phone.css" />
+        <title>Windows Phone</title>
+    </head>
+    <body>
+        <div>
+            <p>MY APPLICATION</p>
+        </div>
+        <div id="page-title">
+            <p id="dynamicTitle">page title</p>
+        </div>
+        <div id="launch-notify">
+            <a onclick="launchNotify()">launch notification to C#</a>
+        </div>
+        <script type="text/javascript">
+            function changeTitle() {
+                document.getElementById('dynamicTitle').innerHTML = "function initiated in C#";
+            }
+            function changeTitle(someNewText) {
+                document.getElementById('dynamicTitle').innerHTML = someNewText;
+            }
+        </script>
+        <script type="text/javascript">
+            document.getElementById('dynamicTitle').innerHTML = "running javascript";
+        </script>
+        <script type="text/javascript">
+            function launchNotify() {
+                window.external.notify("string based data");
+            }
+        </script>
+    </body>
+</html>
