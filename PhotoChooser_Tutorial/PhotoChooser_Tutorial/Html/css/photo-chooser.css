@@ -1,0 +1,10 @@
+﻿#imageContainer {
+    width: 280px;   
+}
+
+#imageContainer div {
+    width:130px;
+    height:130px;
+    padding-right:4px;
+    display:inline-block;
+}
