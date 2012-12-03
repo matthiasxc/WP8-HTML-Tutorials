@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="/html/css/phone.css" />
+        <script type="text/javascript" src="js/WP8_Debug.js" > </script>
+        <title>Windows Phone</title>
+    </head>
+    <body>
+        <div>
+            <p>TOUCH EVENTS DEBUGGER</p>
+        </div>
+        <canvas id="drawSurface" width="280" height="430" style="border:1px solid black;">
+            Canvas isn't supported by this browser or document mode
+        </canvas>
+        <script type="text/javascript">
+            
+            var fillR = 255;
+            var fillG = 0;
+            var fillB = 0;
+            var increment = 20
+
+            function incrementColor()
+            {
+                if (fillR == 255) {
+                    if (fillB > 0) {
+                        fillB = fillB - increment;
+                        if (fillB < 0) { fillB = 0; }
+                    }
+                    else {
+                        fillG = fillG + increment;
+                        if (fillG > 255) { fillG = 255; }
+                    }
+                }
+
+                if (fillG == 255) {
+                    if (fillR > 0) {
+                        fillR = fillR - increment;
+                        if (fillR < 0) { fillR = 0; }
+                    }
+                    else {
+                        fillB = fillB + increment;
+                        if (fillB > 255) { fillB = 255; }
+                    }
+                }
+
+                if (fillB == 255) {
+                    if (fillG > 0) {
+                        fillG = fillG - increment;
+                        if (fillG < 0) { fillG = 0; }
+                    }
+                    else {
+                        fillR = fillR + increment;
+                        if (fillR > 255) { fillR = 255; }
+                    }
+                }
+                return "rgb(" + fillR + "," + fillG + "," + fillB + ")";
+            }
+
+            window.addEventListener('load', function () {
+
+                var canvas = document.getElementById("drawSurface"),
+                    context = canvas.getContext("2d");
+                if (window.navigator.msPointerEnabled) {
+                    canvas.addEventListener("MSPointerMove", paint, false);
+                    canvas.addEventListener("MSPointerDown", paintDown, false);                    
+                }
+                
+                function paint(event) { 
+                    context.fillStyle = incrementColor();
+                    context.fillRect(event.offsetX, event.offsetY, 8, 8);
+                    console.log("(" + event.offsetX + ", " + event.offsetY + ")");
+                }
+
+                function paintDown(event) {
+                    context.fillStyle = incrementColor();
+                    context.fillRect(event.offsetX, event.offsetY, 8, 8);
+                    console.log("(" + event.offsetX + ", " + event.offsetY + ")");
+                }
+            });
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,5 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="WP8_JS_Debugging" EntryPointType="WP8_JS_Debugging.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="WP8_JS_Debugging" Source="WP8_JS_Debugging.dll" />
+  </Deployment.Parts>
+</Deployment>
