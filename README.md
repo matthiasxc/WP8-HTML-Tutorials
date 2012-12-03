@@ -19,11 +19,6 @@ A set of basic tips for writing your HTML5 apps, including
 <br/>
 An HTML app that launches the native camera and returns an image to the app via C#-Javascript communication.
 
-<h2>PhotoChooser_Tutorial</h2>
-<a href="http://matthiasshapiro.com/2012/11/28/camera-launching-from-html-app-in-windows-phone/">Goes along with this tutorial</a>
-<br/>
-An HTML app that launches the native camera and returns an image to the app via C#-Javascript communication.
-
 <h2>WP8_JS_Debugging</h2>
 <a href="http://matthiasshapiro.com/2012/12/03/debugging-an-html5-windows-phone-app//">Goes along with this tutorial</a>
 <br/>
